@@ -1,0 +1,11 @@
+import pandas as pd
+data = pd.read_csv("C:\\Users\\pavan\\Downloads\\Day_9_banking_data.csv")
+print(data.head(5))
+print(data.describe())
+print(data.isnull().sum())
+account_group = data.groupby("Account_Type")
+print(account_group["Transaction_Amount"].sum())
+print(account_group["Account_Balance"].mean())
+branch_group = data.groupby("Branch")
+print(branch_group.size())
+print(branch_group["Transaction_Amount"].mean())
